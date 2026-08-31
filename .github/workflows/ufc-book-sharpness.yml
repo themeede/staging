@@ -1,0 +1,22 @@
+name: UFC sportsbook sharpness research
+
+on:
+  push:
+    branches:
+      - research/ufc-book-sharpness-20260830
+    paths:
+      - .github/workflows/ufc-book-sharpness.yml
+      - research/**
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify runner
+        run: |
+          python --version
+          echo "public runner operational"
