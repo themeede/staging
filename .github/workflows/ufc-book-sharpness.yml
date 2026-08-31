@@ -24,19 +24,76 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install pandas numpy requests beautifulsoup4 lxml
-      - name: Inspect public UFCStats mirror schema
-        run: |
-          python - <<'PY'
-          import pandas as pd
-          url='https://raw.githubusercontent.com/DanMcInerney/mma-ai/main/data/raw/ufcstats/competitions.csv'
-          df=pd.read_csv(url, nrows=8)
-          print('COLUMNS:', list(df.columns))
-          print(df.to_string(index=False))
-          PY
-      - name: Decode and run sportsbook analysis
+      - name: Decode, patch outcome source, and run analysis
         run: |
           gzip -dc research/ufc_sharpness_public.py.gz > research/ufc_sharpness_public.py
-          sed -i 's#http://ufcstats.com#https://ufcstats.com#g' research/ufc_sharpness_public.py
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('research/ufc_sharpness_public.py')
+          source = path.read_text(encoding='utf-8')
+          start = source.index('def scrape_ufcstats(')
+          end = source.index('\ndef ', start + 1)
+          replacement = '''def scrape_ufcstats(session):
+              import hashlib
+              url = "https://raw.githubusercontent.com/DanMcInerney/mma-ai/main/data/raw/ufcstats/competitions.csv"
+              raw = pd.read_csv(url, low_memory=False)
+              raw["event_date_parsed"] = pd.to_datetime(raw["event_date"], errors="coerce")
+              raw = raw[
+                  raw["event_date_parsed"].between(
+                      pd.Timestamp(START_DATE), pd.Timestamp(END_DATE), inclusive="both"
+                  )
+              ].copy()
+              raw["result"] = raw["result"].astype(str).str.upper().str.strip()
+              raw = raw[raw["result"].isin(["W", "L"])].copy()
+              raw["event_date_iso"] = raw["event_date_parsed"].dt.strftime("%Y-%m-%d")
+              raw["event_id"] = raw["event_url"].astype(str).str.rstrip("/").str.rsplit("/", n=1).str[-1]
+              event_rows = (
+                  raw[["event_id", "event_url", "event_date_iso", "event_location"]]
+                  .drop_duplicates()
+                  .assign(event_name="")
+                  .rename(columns={"event_date_iso": "event_date"})
+              )
+              fights = []
+              for _, row in raw.iterrows():
+                  fighter_1 = str(row["player1"]).strip()
+                  fighter_2 = str(row["player2"]).strip()
+                  winner = fighter_1 if row["result"] == "W" else fighter_2
+                  token = "|".join(
+                      [row["event_date_iso"], *sorted([norm_name(fighter_1), norm_name(fighter_2)])]
+                  )
+                  fight_id = hashlib.sha1(token.encode("utf-8")).hexdigest()[:20]
+                  fights.append({
+                      "event_id": row["event_id"],
+                      "event_url": row["event_url"],
+                      "event_name": "",
+                      "event_date": row["event_date"],
+                      "event_date_iso": row["event_date_iso"],
+                      "event_location": row["event_location"],
+                      "fight_id": fight_id,
+                      "fight_url": "",
+                      "fight_order": 99,
+                      "fighter_1_name": fighter_1,
+                      "fighter_2_name": fighter_2,
+                      "winner_name": winner,
+                      "result_code": row["result"],
+                      "weight_class": row["weightclass"],
+                      "pair_key": pair_key(fighter_1, fighter_2),
+                  })
+              fight_frame = pd.DataFrame(fights)
+              if fight_frame.empty:
+                  raise RuntimeError("No decisive fights in the GitHub UFCStats mirror")
+              print(
+                  f"UFCStats mirror: {len(fight_frame)} decisive fights, "
+                  f"{fight_frame.event_id.nunique()} events, "
+                  f"{fight_frame.event_date_iso.min()} to {fight_frame.event_date_iso.max()}",
+                  flush=True,
+              )
+              return event_rows, fight_frame
+          '''
+          source = source[:start] + replacement + source[end:]
+          source = source.replace('fight.ufc_event_name', 'fight.event_name')
+          path.write_text(source, encoding='utf-8')
+          PY
           python research/ufc_sharpness_public.py --output-dir ufc_book_sharpness_results
       - name: Upload complete result bundle
         uses: actions/upload-artifact@v4
@@ -45,3 +102,11 @@ jobs:
           path: ufc_book_sharpness_results/
           if-no-files-found: error
           retention-days: 30
+      - name: Persist result tables on the research branch
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f ufc_book_sharpness_results
+          git diff --cached --quiet || git commit -m "Add computed UFC sportsbook sharpness results"
+          git push
