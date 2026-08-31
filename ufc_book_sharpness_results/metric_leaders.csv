@@ -1,0 +1,91 @@
+Year,Weighting,Metric,Rank,Book,Value,N
+2024,Equal,Accuracy d=5,1,BetWay,0.738498789346247,487
+2024,Equal,Accuracy d=5,2,BetRivers,0.7290167865707434,477
+2024,Equal,Accuracy d=5,3,BetMGM,0.7251732101616628,482
+2024,Equal,Accuracy d=10,1,BetWay,0.7558139534883721,487
+2024,Equal,Accuracy d=10,2,DraftKings,0.7456140350877193,480
+2024,Equal,Accuracy d=10,3,BetRivers,0.7441176470588236,477
+2024,Equal,Log loss,1,DraftKings,0.5785680292088031,480
+2024,Equal,Log loss,2,BetMGM,0.5799537409691599,482
+2024,Equal,Log loss,3,BetRivers,0.5800702178043919,477
+2024,Equal,ECE fixed 20,1,Caesars,0.04509503550876243,477
+2024,Equal,ECE fixed 20,2,BetMGM,0.05565065759433584,482
+2024,Equal,ECE fixed 20,3,BetWay,0.0611868765166237,487
+2024,Equal,ECE percentile 20,1,BetRivers,0.0606810117816997,477
+2024,Equal,ECE percentile 20,2,Caesars,0.06345665761251669,477
+2024,Equal,ECE percentile 20,3,BetWay,0.06893574974820514,487
+2024,Liquidity proxy,Accuracy d=5,1,BetWay,0.7378914666112685,487
+2024,Liquidity proxy,Accuracy d=5,2,BetRivers,0.7273005470854054,477
+2024,Liquidity proxy,Accuracy d=5,3,BetMGM,0.7242442560377452,482
+2024,Liquidity proxy,Accuracy d=10,1,BetWay,0.7579912868965478,487
+2024,Liquidity proxy,Accuracy d=10,2,DraftKings,0.7454872602915409,480
+2024,Liquidity proxy,Accuracy d=10,3,BetRivers,0.7448614768373935,477
+2024,Liquidity proxy,Log loss,1,DraftKings,0.5787691769705768,480
+2024,Liquidity proxy,Log loss,2,BetWay,0.5797156571135766,487
+2024,Liquidity proxy,Log loss,3,BetMGM,0.5799838110742825,482
+2024,Liquidity proxy,ECE fixed 20,1,Caesars,0.04306866759696778,477
+2024,Liquidity proxy,ECE fixed 20,2,BetMGM,0.05489872476951483,482
+2024,Liquidity proxy,ECE fixed 20,3,BetWay,0.05915250337377829,487
+2024,Liquidity proxy,ECE percentile 20,1,BetRivers,0.06181068254424228,477
+2024,Liquidity proxy,ECE percentile 20,2,Caesars,0.06371412570193803,477
+2024,Liquidity proxy,ECE percentile 20,3,BetMGM,0.07404786636850388,482
+2025,Equal,Accuracy d=5,1,BetMGM,0.7023255813953488,244
+2025,Equal,Accuracy d=5,2,BetWay,0.7022900763358778,468
+2025,Equal,Accuracy d=5,3,FanDuel,0.7002398081534772,468
+2025,Equal,Accuracy d=10,1,BetRivers,0.7243401759530792,467
+2025,Equal,Accuracy d=10,2,DraftKings,0.7191011235955056,245
+2025,Equal,Accuracy d=10,3,BetWay,0.718475073313783,468
+2025,Equal,Log loss,1,DraftKings,0.5933953452735945,245
+2025,Equal,Log loss,2,Caesars,0.5935328328553812,465
+2025,Equal,Log loss,3,BetRivers,0.594056543343237,467
+2025,Equal,ECE fixed 20,1,BetRivers,0.0480362866570398,467
+2025,Equal,ECE fixed 20,2,BetWay,0.050604494210151174,468
+2025,Equal,ECE fixed 20,3,Caesars,0.05176720063983186,465
+2025,Equal,ECE percentile 20,1,Caesars,0.047251679319080954,465
+2025,Equal,ECE percentile 20,2,BetRivers,0.06799217435455913,467
+2025,Equal,ECE percentile 20,3,BetWay,0.07849071876189741,468
+2025,Liquidity proxy,Accuracy d=5,1,BetMGM,0.7023401555657757,244
+2025,Liquidity proxy,Accuracy d=5,2,BetWay,0.7021927562564356,468
+2025,Liquidity proxy,Accuracy d=5,3,FanDuel,0.6995205786777399,468
+2025,Liquidity proxy,Accuracy d=10,1,BetRivers,0.7222895383915967,467
+2025,Liquidity proxy,Accuracy d=10,2,Caesars,0.7179577153317273,465
+2025,Liquidity proxy,Accuracy d=10,3,DraftKings,0.7172822438046366,245
+2025,Liquidity proxy,Log loss,1,DraftKings,0.5945893176332532,245
+2025,Liquidity proxy,Log loss,2,Caesars,0.595288128217277,465
+2025,Liquidity proxy,Log loss,3,FanDuel,0.5961863747463416,468
+2025,Liquidity proxy,ECE fixed 20,1,BetRivers,0.04931718211155861,467
+2025,Liquidity proxy,ECE fixed 20,2,BetWay,0.0493331980325015,468
+2025,Liquidity proxy,ECE fixed 20,3,Caesars,0.05077676780793875,465
+2025,Liquidity proxy,ECE percentile 20,1,Caesars,0.04048562509483014,465
+2025,Liquidity proxy,ECE percentile 20,2,BetWay,0.07027024297583592,468
+2025,Liquidity proxy,ECE percentile 20,3,FanDuel,0.07304031239853251,468
+2026,Equal,Accuracy d=5,1,BetWay,0.7735849056603774,254
+2026,Equal,Accuracy d=5,2,FanDuel,0.7692307692307693,251
+2026,Equal,Accuracy d=5,3,BetRivers,0.7668161434977578,253
+2026,Equal,Accuracy d=10,1,Caesars,0.7927461139896373,252
+2026,Equal,Accuracy d=10,2,FanDuel,0.7914438502673797,251
+2026,Equal,Accuracy d=10,3,BetRivers,0.7905759162303665,253
+2026,Equal,Log loss,1,Caesars,0.5375016019343009,252
+2026,Equal,Log loss,2,BetRivers,0.5400430561094983,253
+2026,Equal,Log loss,3,Unibet,0.542223250159381,253
+2026,Equal,ECE fixed 20,1,Unibet,0.08720685882076769,253
+2026,Equal,ECE fixed 20,2,BetRivers,0.08848916169340222,253
+2026,Equal,ECE fixed 20,3,BetWay,0.0950097998474988,254
+2026,Equal,ECE percentile 20,1,FanDuel,0.09000634755731272,251
+2026,Equal,ECE percentile 20,2,Unibet,0.09978094517461669,253
+2026,Equal,ECE percentile 20,3,BetRivers,0.10629287505677681,253
+2026,Liquidity proxy,Accuracy d=5,1,BetWay,0.7733726097368071,254
+2026,Liquidity proxy,Accuracy d=5,2,FanDuel,0.7690883273741717,251
+2026,Liquidity proxy,Accuracy d=5,3,BetRivers,0.7669570037567707,253
+2026,Liquidity proxy,Accuracy d=10,1,Caesars,0.7922252446878506,252
+2026,Liquidity proxy,Accuracy d=10,2,FanDuel,0.7911505287335898,251
+2026,Liquidity proxy,Accuracy d=10,3,BetRivers,0.7910455826111424,253
+2026,Liquidity proxy,Log loss,1,Caesars,0.5378784797298872,252
+2026,Liquidity proxy,Log loss,2,BetRivers,0.5398053409602734,253
+2026,Liquidity proxy,Log loss,3,Unibet,0.5421209119424442,253
+2026,Liquidity proxy,ECE fixed 20,1,Unibet,0.08976207498217977,253
+2026,Liquidity proxy,ECE fixed 20,2,BetRivers,0.09140659368871171,253
+2026,Liquidity proxy,ECE fixed 20,3,BetWay,0.09614461970962451,254
+2026,Liquidity proxy,ECE percentile 20,1,Caesars,0.10211858755045387,252
+2026,Liquidity proxy,ECE percentile 20,2,FanDuel,0.10268211637963756,251
+2026,Liquidity proxy,ECE percentile 20,3,Unibet,0.10381465795004269,253

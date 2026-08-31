@@ -1,0 +1,32 @@
+Year,FightID,Book,Odds1,Odds2,Reason,SourceURL
+2026,6043bdafde3c2323390b,Kalshi Up to $500 i,4566.0,-10679.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-winnipeg-4130
+2026,1128d8591ea5f20c828a,Kalshi Up to $500 i,4566.0,-10679.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-vegas-116-4147
+2026,c4eb4e1074f1a5a2c485,Kalshi Up to $500 i,-10679.0,4566.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-vegas-116-4147
+2026,e111f5459a8634976ee3,Kalshi Up to $500 i,-10679.0,4566.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-vegas-116-4147
+2026,70333b6ef09616e55b04,Kalshi Up to $500 i,-10679.0,3013.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-perth-4079
+2026,a6feb237f1abbfe105b1,Kalshi Up to $500 i,-132.0,-3487.0,implausible_two_way_overround,https://www.bestfightodds.com/events/ufc-perth-4079
+2026,c1b96686a797a9d1ba28,Kalshi Up to $500 i,-10679.0,4566.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-perth-4079
+2026,eb58aa538025d84754a6,Kalshi Up to $500 i,-10679.0,4566.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-perth-4079
+2026,08dcbff830ffd3e10af8,Kalshi Up to $500 i,3013.0,-10679.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-vegas-117-4186
+2026,168f8ad5d51eb39cd714,Kalshi Up to $500 i,-10679.0,3013.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-macau-4188
+2026,948d4673afc7b223899b,Kalshi Up to $500 i,-10679.0,3013.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-vegas-118-4200
+2026,ed8d3c649d26e4bcd5e8,Kalshi Up to $500 i,4566.0,-10679.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-vegas-118-4200
+2026,82acd9353eb25292c309,Kalshi Up to $500 i,4566.0,-10679.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-vegas-119-4225
+2026,4e1a30372d927b45148e,Kalshi Up to $500 i,-10679.0,3013.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-oklahoma-4195
+2026,ac4b1e2d91f6b715fd6e,Kalshi Up to $500 i,-10679.0,4566.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-oklahoma-4195
+2026,36e31ecb5e5293d338d9,Kalshi Up to $500 i,4566.0,-10679.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-abu-dhabi-4216
+2026,e39c7acbd0c482c9689c,Kalshi Up to $500 i,3013.0,-10679.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-abu-dhabi-4216
+2026,cbcd69e82411be35787d,Kalshi Up to $500 i,-10679.0,4566.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-belgrade-4285
+2026,c9226cb007c6ac33b60c,Kalshi Up to $500 i,9226.0,-10679.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-vegas-120-4301
+2026,cf3d43ecedc949bc9a6f,Kalshi Up to $500 i,4566.0,-10679.0,extreme_moneyline,https://www.bestfightodds.com/events/ufc-vegas-120-4301
+2024,7fa1008034e49e1fe858,BetWay,700.0,-2000.0,catastrophic_cross_book_alignment_outlier,https://www.bestfightodds.com/events/ufc-3173
+2026,343a017a283c904701b5,Kalshi Up to $500 i,-721.0,528.0,catastrophic_cross_book_alignment_outlier,https://www.bestfightodds.com/events/ufc-vegas-116-4147
+2026,79d3475dc3d2f5776488,Kalshi Up to $500 i,-1240.0,838.0,catastrophic_cross_book_alignment_outlier,https://www.bestfightodds.com/events/ufc-vegas-116-4147
+2026,ba9fe6092e48268a92ab,Kalshi Up to $500 i,1770.0,-3487.0,catastrophic_cross_book_alignment_outlier,https://www.bestfightodds.com/events/ufc-vegas-116-4147
+2026,f3cafe467e4082e5f69f,Kalshi Up to $500 i,-2049.0,942.0,catastrophic_cross_book_alignment_outlier,https://www.bestfightodds.com/events/ufc-vegas-116-4147
+2026,db078efbd974d0c1dad2,Kalshi Up to $500 i,-405.0,330.0,catastrophic_cross_book_alignment_outlier,https://www.bestfightodds.com/events/ufc-vegas-117-4178
+2026,8419bdb8285179e426fb,Kalshi Up to $500 i,838.0,-1090.0,catastrophic_cross_book_alignment_outlier,https://www.bestfightodds.com/events/ufc-vegas-118-4200
+2026,414286bded2f14efcfea,Kalshi Up to $500 i,754.0,-970.0,catastrophic_cross_book_alignment_outlier,https://www.bestfightodds.com/events/ufc-vegas-119-4225
+2026,7bd5b6351f4f8b7ef5bd,Kalshi Up to $500 i,623.0,-791.0,catastrophic_cross_book_alignment_outlier,https://www.bestfightodds.com/events/ufc-vegas-119-4225
+2026,0b820db9d5cf6709ff4f,Kalshi Up to $500 i,1770.0,-2049.0,catastrophic_cross_book_alignment_outlier,https://www.bestfightodds.com/events/ufc-fight-night-4230
+2026,5c9419dd61dff4b58d94,Kalshi Up to $500 i,1071.0,-2049.0,catastrophic_cross_book_alignment_outlier,https://www.bestfightodds.com/events/ufc-belgrade-4285
