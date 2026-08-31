@@ -9,14 +9,42 @@ on:
       - research/**
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  smoke:
+  analyze:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
-      - name: Verify runner
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install analysis dependencies
         run: |
-          python --version
-          echo "public runner operational"
+          python -m pip install --upgrade pip
+          python -m pip install pandas numpy requests beautifulsoup4 lxml
+
+      - name: Decode and run sportsbook analysis
+        run: |
+          gzip -dc research/ufc_sharpness_public.py.gz > research/ufc_sharpness_public.py
+          python research/ufc_sharpness_public.py --output-dir ufc_book_sharpness_results
+
+      - name: Upload complete result bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: ufc-sportsbook-sharpness-results
+          path: ufc_book_sharpness_results/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Persist result tables on the research branch
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f ufc_book_sharpness_results
+          git diff --cached --quiet || git commit -m "Add computed UFC sportsbook sharpness results"
+          git push
