@@ -30,6 +30,7 @@ jobs:
       - name: Decode and run sportsbook analysis
         run: |
           gzip -dc research/ufc_sharpness_public.py.gz > research/ufc_sharpness_public.py
+          sed -i 's#http://ufcstats.com#https://ufcstats.com#g' research/ufc_sharpness_public.py
           python research/ufc_sharpness_public.py --output-dir ufc_book_sharpness_results
 
       - name: Upload complete result bundle
